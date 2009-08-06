@@ -51,6 +51,7 @@
     <Compile Include="infrastructure\containers\basic\ContainerResolverException.cs" />
     <Compile Include="infrastructure\containers\basic\ResolverNotRegisteredException.cs" />
     <Compile Include="infrastructure\containers\basic\TypeDependencyResolver.cs" />
+    <Compile Include="infrastructure\containers\basic\TypeDependencyResolverImplementation.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\Id.cs" />
     <Compile Include="infrastructure\Specification.cs" />
