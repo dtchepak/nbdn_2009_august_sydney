@@ -14,6 +14,7 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
         public object resolve_concrete_type(Type type_of_class_to_resolve)
         {
             var type_to_create = mappings[type_of_class_to_resolve];
+            
             return Activator.CreateInstance(type_to_create);
         }
 
