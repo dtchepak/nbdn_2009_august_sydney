@@ -1,15 +1,12 @@
-using System;
 using developwithpassion.bdd;
 using nothinbutdotnetstore.infrastructure;
 using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit.standard.observations;
 using developwithpassion.bdddoc.core;
 using nothinbutdotnetstore.ui;
-using developwithpassion.bdd.mbunit;
 using System.Windows.Forms;
-using Rhino.Mocks;
 
-namespace build.product.docs
+namespace nothinbutdotnetstore.tests.ui
 {
     public class ButtonBinderSpec
     {
