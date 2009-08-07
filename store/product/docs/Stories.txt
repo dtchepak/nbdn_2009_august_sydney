@@ -30,11 +30,6 @@ As a shopper
   so I can know if I am shopping within my budget
 
 As a shopper
-  I want to be able to get the total cost of my shopping cart
-  so I can know if I am shopping within my budget
-
-
-As a shopper
   I want to be able to see the total number of items that I have in my
   shopping cart
   so I can see if I am potentially buying too many things this shopping trip

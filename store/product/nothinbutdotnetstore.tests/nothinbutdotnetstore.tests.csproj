@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="domain\ShoppingCartSpecs.cs" />
     <Compile Include="infrastructure\BasicContainerSpecs.cs" />
     <Compile Include="infrastructure\ContainerItemResolverSpecs.cs" />
     <Compile Include="infrastructure\EnumerableExtensionsSpecs.cs" />
