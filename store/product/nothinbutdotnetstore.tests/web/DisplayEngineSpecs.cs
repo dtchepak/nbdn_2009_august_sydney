@@ -4,7 +4,6 @@
  using developwithpassion.bdddoc.core;
  using nothinbutdotnetstore.web.core.frontcontroller;
  using developwithpassion.bdd;
- using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.tests.web
  {   

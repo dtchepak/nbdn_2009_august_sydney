@@ -1,10 +1,10 @@
 using nothinbutdotnetstore.domain;
 using nothinbutdotnetstore.dto;
+using nothinbutdotnetstore.infrastructure;
 
 namespace nothinbutdotnetstore.tasks
 {
-    public interface ProductItemMapper
+    public interface ProductItemMapper : Mapper<Product,ProductItem>
     {
-        ProductItem map_from(Product product);
     }
 }

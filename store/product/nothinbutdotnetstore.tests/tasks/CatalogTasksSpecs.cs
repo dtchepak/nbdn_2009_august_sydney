@@ -15,7 +15,21 @@ namespace nothinbutdotnetstore.tests.tasks
     public class CatalogTasksSpecs
     {
         public abstract class concern : observations_for_a_sut_with_a_contract<CatalogTasks,
-                                            CatalogTasksImplementation> {}
+                                            CatalogTasksImplementation> {
+
+            context c = () =>
+            {
+                mapper_registry = the_dependency<MapperRegistry>();
+                department_repository = the_dependency<DepartmentRepository>();
+                department_item_mapper = an<DepartmentItemMapper>();
+
+                mapper_registry.Stub(x => x.get_mapper_to_map<Department, DepartmentItem>()).Return(department_item_mapper);
+            };
+
+            static protected DepartmentRepository department_repository;
+            static protected DepartmentItemMapper department_item_mapper;
+            static protected MapperRegistry mapper_registry;
+                                            }
 
         [Concern(typeof (CatalogTasks))]
         public class when_getting_all_of_the_main_departments_in_the_store : concern
@@ -36,8 +50,6 @@ namespace nothinbutdotnetstore.tests.tasks
                 mapped_department_item = new DepartmentItem();
                 the_main_departments = ObjectMother.create_enumerable_from(main_department);
 
-                department_repository = the_dependency<DepartmentRepository>();
-                department_item_mapper = the_dependency<DepartmentItemMapper>();
                 department_repository.Stub(x => x.all_main_departments()).Return(the_main_departments);
                 department_item_mapper.Stub(x => x.map_from(main_department)).Return(mapped_department_item);
             };
@@ -45,10 +57,8 @@ namespace nothinbutdotnetstore.tests.tasks
 
             static IEnumerable<DepartmentItem> results;
             static DepartmentItem mapped_department_item;
-            static DepartmentRepository department_repository;
             static IEnumerable<Department> the_main_departments;
             static Department main_department;
-            static DepartmentItemMapper department_item_mapper;
         }
 
         [Concern(typeof (CatalogTasks))]
@@ -71,8 +81,6 @@ namespace nothinbutdotnetstore.tests.tasks
                 mapped_department_item = new DepartmentItem();
                 the_sub_departments = ObjectMother.create_enumerable_from(sub_department);
 
-                department_repository = the_dependency<DepartmentRepository>();
-                department_item_mapper = the_dependency<DepartmentItemMapper>();
                 department_repository.Stub(x => x.all_sub_departments_in(department_id)).Return(the_sub_departments);
                 department_item_mapper.Stub(x => x.map_from(sub_department)).Return(mapped_department_item);
             };
@@ -80,10 +88,8 @@ namespace nothinbutdotnetstore.tests.tasks
 
             static IEnumerable<DepartmentItem> results;
             static DepartmentItem mapped_department_item;
-            static DepartmentRepository department_repository;
             static IEnumerable<Department> the_sub_departments;
             static Department sub_department;
-            static DepartmentItemMapper department_item_mapper;
             static Id<long> department_id;
         }
 

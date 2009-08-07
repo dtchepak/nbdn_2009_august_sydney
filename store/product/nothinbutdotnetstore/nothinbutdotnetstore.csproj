@@ -60,6 +60,8 @@
     <Compile Include="infrastructure\containers\basic\IsSpecificType.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\Id.cs" />
+    <Compile Include="infrastructure\Mapper.cs" />
+    <Compile Include="infrastructure\MapperRegistry.cs" />
     <Compile Include="infrastructure\Specification.cs" />
     <Compile Include="tasks\AddResolverToContainer.cs" />
     <Compile Include="tasks\ApplicationStartup.cs" />
