@@ -10,4 +10,31 @@ As a shopper
   I want to be able to view a list of the products in a department 
   so that I can see potential products that I may want to add to my shopping cart
 
+As a shopper
+  I want to be able to add a product to my shopping cart
+  so that I can potentially purchase it
 
+As a shopper
+  I want to be able to remove a product from my shopping cart
+  so that I can choose to no longer purchase an item
+
+As a shopper
+  I want to be able to change the quantity of a product in my shopping cart
+  so that I can alter how much of a product that I want to buy
+
+As a shopper
+  I want to be able to empty my shopping cart
+
+As a shopper
+  I want to be able to get the total cost of my shopping cart
+  so I can know if I am shopping within my budget
+
+As a shopper
+  I want to be able to get the total cost of my shopping cart
+  so I can know if I am shopping within my budget
+
+
+As a shopper
+  I want to be able to see the total number of items that I have in my
+  shopping cart
+  so I can see if I am potentially buying too many things this shopping trip
