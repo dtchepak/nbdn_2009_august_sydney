@@ -9,31 +9,29 @@ namespace nothinbutdotnetstore.tasks
     public class CatalogTasksImplementation : CatalogTasks
     {
         DepartmentRepository department_repository;
-        DepartmentItemMapper departmentItemMapper;
         ProductRepository  product_repository;
-        ProductItemMapper product_item_mapper;
-        
-        public CatalogTasksImplementation(DepartmentRepository department_repository, DepartmentItemMapper departmentItemMapper, ProductRepository product_repository, ProductItemMapper product_item_mapper)
+        readonly DomainToModelMapper mapper;
+
+        public CatalogTasksImplementation(DepartmentRepository department_repository, ProductRepository product_repository, DomainToModelMapper mapper)
         {
             this.department_repository = department_repository;
-            this.product_item_mapper = product_item_mapper;
             this.product_repository = product_repository;
-            this.departmentItemMapper = departmentItemMapper;
+            this.mapper = mapper;
         }
 
         public IEnumerable<DepartmentItem> get_all_main_departments()
         {
-            return department_repository.all_main_departments().Select(department => departmentItemMapper.map_from(department));
+            return department_repository.all_main_departments().Select(department => mapper.map<Department,DepartmentItem>(department));
         }
 
         public IEnumerable<DepartmentItem> get_all_subdepartments_in(Id<long> department_id)
         {
-            return department_repository.all_sub_departments_in(department_id).Select(department => departmentItemMapper.map_from(department));
+            return department_repository.all_sub_departments_in(department_id).Select(department => mapper.map<Department,DepartmentItem>(department));
         }
 
         public IEnumerable<ProductItem> get_all_products_in(Id<long> department_id)
         {
-            return product_repository.all_products_in(department_id).Select(product => product_item_mapper.map_from(product));
+            return product_repository.all_products_in(department_id).Select(product => mapper.map<Product,ProductItem>(product));
         }
     }
 }

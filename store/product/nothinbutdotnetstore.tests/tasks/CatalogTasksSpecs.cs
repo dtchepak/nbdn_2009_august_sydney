@@ -36,10 +36,10 @@ namespace nothinbutdotnetstore.tests.tasks
                 mapped_department_item = new DepartmentItem();
                 the_main_departments = ObjectMother.create_enumerable_from(main_department);
 
+                mapper = the_dependency<DomainToModelMapper>();
+                mapper.Stub(x => x.map<Department, DepartmentItem>(main_department)).Return(mapped_department_item);
                 department_repository = the_dependency<DepartmentRepository>();
-                department_item_mapper = the_dependency<DepartmentItemMapper>();
                 department_repository.Stub(x => x.all_main_departments()).Return(the_main_departments);
-                department_item_mapper.Stub(x => x.map_from(main_department)).Return(mapped_department_item);
             };
 
 
@@ -48,7 +48,7 @@ namespace nothinbutdotnetstore.tests.tasks
             static DepartmentRepository department_repository;
             static IEnumerable<Department> the_main_departments;
             static Department main_department;
-            static DepartmentItemMapper department_item_mapper;
+            static DomainToModelMapper mapper;
         }
 
         [Concern(typeof (CatalogTasks))]
@@ -72,9 +72,10 @@ namespace nothinbutdotnetstore.tests.tasks
                 the_sub_departments = ObjectMother.create_enumerable_from(sub_department);
 
                 department_repository = the_dependency<DepartmentRepository>();
-                department_item_mapper = the_dependency<DepartmentItemMapper>();
                 department_repository.Stub(x => x.all_sub_departments_in(department_id)).Return(the_sub_departments);
-                department_item_mapper.Stub(x => x.map_from(sub_department)).Return(mapped_department_item);
+                
+                mapper = the_dependency<DomainToModelMapper>();
+                mapper.Stub(x => x.map<Department,DepartmentItem>(sub_department)).Return(mapped_department_item);
             };
 
 
@@ -83,8 +84,8 @@ namespace nothinbutdotnetstore.tests.tasks
             static DepartmentRepository department_repository;
             static IEnumerable<Department> the_sub_departments;
             static Department sub_department;
-            static DepartmentItemMapper department_item_mapper;
             static Id<long> department_id;
+            static DomainToModelMapper mapper;
         }
 
         [Concern(typeof (CatalogTasks))]
@@ -108,9 +109,9 @@ namespace nothinbutdotnetstore.tests.tasks
                 the_products = ObjectMother.create_enumerable_from(product);
 
                 product_repository = the_dependency<ProductRepository>();
-                product_item_mapper = the_dependency<ProductItemMapper>();
+                mapper = the_dependency<DomainToModelMapper>();
                 product_repository.Stub(x => x.all_products_in(department_id)).Return(the_products);
-                product_item_mapper.Stub(x => x.map_from(product)).Return(mapped_product_item);
+                mapper.Stub(x => x.map<Product,ProductItem>(product)).Return(mapped_product_item);
             };
 
 
@@ -118,9 +119,9 @@ namespace nothinbutdotnetstore.tests.tasks
             static ProductRepository product_repository;
             static IEnumerable<Product> the_products;
             static Product product;
-            static ProductItemMapper product_item_mapper;
             static Id<long> department_id;
             static ProductItem mapped_product_item;
+            static DomainToModelMapper mapper;
         }
     }
 }
