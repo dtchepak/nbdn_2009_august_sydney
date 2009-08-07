@@ -45,10 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="domain\CartCorral.cs" />
     <Compile Include="domain\Department.cs" />
     <Compile Include="domain\DepartmentRepository.cs" />
     <Compile Include="domain\Product.cs" />
     <Compile Include="domain\ProductRepository.cs" />
+    <Compile Include="domain\ShoppingCart.cs" />
+    <Compile Include="dto\ItemToAddToCartDetails.cs" />
     <Compile Include="dto\DepartmentItem.cs" />
     <Compile Include="dto\ProductItem.cs" />
     <Compile Include="infrastructure\Command.cs" />
@@ -63,6 +66,9 @@
     <Compile Include="infrastructure\Mapper.cs" />
     <Compile Include="infrastructure\MapperRegistry.cs" />
     <Compile Include="infrastructure\Specification.cs" />
+    <Compile Include="orm\Criteria.cs" />
+    <Compile Include="orm\ProductQueries.cs" />
+    <Compile Include="orm\Repository.cs" />
     <Compile Include="tasks\AddResolverToContainer.cs" />
     <Compile Include="tasks\ApplicationStartup.cs" />
     <Compile Include="tasks\ApplicationStartupCommandFactory.cs" />
@@ -70,6 +76,8 @@
     <Compile Include="tasks\CatalogTasksImplementation.cs" />
     <Compile Include="tasks\DepartmentItemMapper.cs" />
     <Compile Include="tasks\ProductItemMapper.cs" />
+    <Compile Include="tasks\ShoppingTasks.cs" />
+    <Compile Include="tasks\ShoppingTasksImplementation.cs" />
     <Compile Include="tasks\startup\ApplicationStartupCommand.cs" />
     <Compile Include="tasks\startup\ApplicationStartupCommandFactoryImplementation.cs" />
     <Compile Include="tasks\startup\ApplicationStartupPipelineBuilder.cs" />
@@ -78,6 +86,7 @@
     <Compile Include="tasks\startup\ConfigureTheApplicationRoutes.cs" />
     <Compile Include="tasks\startup\ConfigureTheServiceLayer.cs" />
     <Compile Include="tasks\startup\Start.cs" />
+    <Compile Include="web\application\catalogbrowsing\AddProductToShoppingCart.cs" />
     <Compile Include="web\core\frontcontroller\ItemRendererRegistryImplementation.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewMainDepartments.cs" />
@@ -114,6 +123,7 @@
   <ItemGroup>
     <Folder Include="infrastructure\containers\castle\" />
     <Folder Include="infrastructure\logging\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

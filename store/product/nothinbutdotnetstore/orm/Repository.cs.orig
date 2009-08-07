@@ -1,0 +1,13 @@
+namespace nothinbutdotnetstore.orm
+{
+<<<<<<< HEAD:store/product/nothinbutdotnetstore/orm/Repository.cs
+    public class Repository
+    {
+        
+=======
+    public interface Repository
+    {
+        Item the_item_matching<Item>(Criteria<Item> criteria);
+>>>>>>> jp:store/product/nothinbutdotnetstore/orm/Repository.cs
+    }
+}

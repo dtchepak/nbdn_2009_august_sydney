@@ -1,6 +1,6 @@
 namespace nothinbutdotnetstore.orm
 {
-    public interface Criteria
+    public interface Criteria<Item>
     {
         
     }

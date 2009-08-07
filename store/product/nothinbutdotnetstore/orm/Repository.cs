@@ -1,7 +1,7 @@
 namespace nothinbutdotnetstore.orm
 {
-    public class Repository
+    public interface Repository
     {
-        
+        Item the_item_matching<Item>(Criteria<Item> criteria);
     }
 }

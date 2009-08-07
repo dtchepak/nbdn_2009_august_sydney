@@ -1,0 +1,11 @@
+namespace nothinbutdotnetstore.orm
+{
+<<<<<<< HEAD:store/product/nothinbutdotnetstore/orm/Criteria.cs
+    public interface Criteria
+=======
+    public interface Criteria<Item>
+>>>>>>> jp:store/product/nothinbutdotnetstore/orm/Criteria.cs
+    {
+        
+    }
+}
