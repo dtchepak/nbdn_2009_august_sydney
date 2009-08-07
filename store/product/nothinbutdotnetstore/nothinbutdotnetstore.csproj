@@ -6,12 +6,14 @@
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{922EF2FE-820B-4ED5-9D64-7D716E135719}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>nothinbutdotnetstore</RootNamespace>
     <AssemblyName>nothinbutdotnetstore</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -88,6 +90,7 @@
     <Compile Include="tasks\startup\ConfigureTheApplicationRoutes.cs" />
     <Compile Include="tasks\startup\ConfigureTheServiceLayer.cs" />
     <Compile Include="tasks\startup\Start.cs" />
+    <Compile Include="ui\winforms\BootStrap.cs" />
     <Compile Include="web\application\catalogbrowsing\AddProductToShoppingCart.cs" />
     <Compile Include="web\core\frontcontroller\ItemRendererRegistryImplementation.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
